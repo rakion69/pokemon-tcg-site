@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Pokémon TCG Toolkit</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <h1>Pokémon TCG Toolkit</h1>
+        <p>Cards, staples &amp; rotation guide</p>
+    </header>
+
+    <main>
+        <section class="categories">
+
+            <a href="#staples" class="category-card">
+                <h2>Staple Cards</h2>
+                <p>Cards you'll see again and again.</p>
+            </a>
+
+            <a href="#useful" class="category-card">
+                <h2>Useful Cards</h2>
+                <p>Situational cards worth knowing.</p>
+            </a>
+
+            <a href="#rotation" class="category-card">
+                <h2>Current Rotation</h2>
+                <p>Cards currently legal in Standard.</p>
+            </a>
+
+        </section>
+
+        <section id="staples">
+            <h2>Staple Cards</h2>
+            <div id="staple-cards" class="card-grid"></div>
+        </section>
+
+        <section id="useful">
+            <h2>Useful Cards</h2>
+            <div id="useful-cards" class="card-grid"></div>
+        </section>
+
+        <section id="rotation">
+            <h2>Current Rotation</h2>
+            <div id="rotation-cards" class="card-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pokémon TCG Toolkit</p>
+        <p>Card data provided by TCGdex</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
