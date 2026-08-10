@@ -93,3 +93,22 @@ footer {
         font-size: 32px;
     }
 }
+
+.pokemon-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.pokemon-card img {
+    width: 100%;
+    max-width: 220px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.pokemon-card h3 {
+    font-size: 18px;
+}
