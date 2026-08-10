@@ -3,6 +3,7 @@ const tcgdex = new TCGdex("en");
 async function getCard(cardId) {
     try {
         const card = await tcgdex.card.get(cardId);
+        console.log("Carta ricevuta:", card);
         return card;
     } catch (error) {
         console.error(`Errore caricando ${cardId}:`, error);
@@ -28,7 +29,10 @@ async function loadCards(cardIds, containerId) {
         const cardElement = document.createElement("div");
         cardElement.className = "pokemon-card";
 
-        const imageUrl = card.getImageURL("high", "png");
+        // Fallback safety check for image URL extraction
+        const imageUrl = typeof card.getImageUrl === "function" 
+            ? card.getImageUrl("high", "png") 
+            : card.image ? `${card.image}/high.png` : "";
 
         cardElement.innerHTML = `
             <img src="${imageUrl}" alt="${card.name}">
@@ -40,4 +44,4 @@ async function loadCards(cardIds, containerId) {
 }
 
 loadCards(staples, "staple-cards");
-// Removed dangling closing brace from here
+// Removed extra closing brace from here
