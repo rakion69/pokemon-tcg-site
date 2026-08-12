@@ -39,21 +39,21 @@ const staples = [
 ];
 
 const useful = [
-    "TEF-144",
-    "SVI-186",
     "JTG-056",
     "ASC-039",
+    "JTG-120",
+    "TEF-129",
+    "TEF-144",
+    "SVI-186",
     "ASC-181",
     "DRI-010",
     "PFL-087",
     "WHT-084",
-    "JTG-120",
-    "JTG-129",
     "ASC-196",
     "CRI-082",
     "SCR-133",
     "TWM-165"
-    
+
 ]
 
 // Funzione che converte automaticamente i tuoi codici nel formato TCGdex
