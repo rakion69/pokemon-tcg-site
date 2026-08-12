@@ -28,3 +28,4 @@ async function loadCards(cards, containerId) {
 }
 
 loadCards(staples, "staple-cards");
+loadCards(Useful, "useful-cards")

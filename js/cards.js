@@ -25,8 +25,7 @@ const setMap = {
 
 // Ora puoi scrivere le tue staples usando I CODICI DEL SET UFFICIALI (es. "ASC-142")
 const staples = [
-    "swsh3-136",
-    "ASC-142",
+    "SFA-038",
     "ASC-196",
     "POR-062", 
     "TWM-095", 
@@ -34,12 +33,28 @@ const staples = [
     "MEG-114",
     "MEG-131",
     "POR-081",
-    "TEF-144",
     "MEG-125",
-    "JTG-056",
-    "DRI-176",
-    "SVI-186"
+    "DRI-176"
+    
 ];
+
+const useful = [
+    "TEF-144",
+    "SVI-186",
+    "JTG-056",
+    "ASC-039",
+    "ASC-181",
+    "DRI-010",
+    "PFL-087",
+    "WHT-084",
+    "JTG-120",
+    "JTG-129",
+    "ASC-196",
+    "CRI-082",
+    "SCR-133",
+    "TWM-165"
+    
+]
 
 // Funzione che converte automaticamente i tuoi codici nel formato TCGdex
 function getTcgdexId(cardInput) {
