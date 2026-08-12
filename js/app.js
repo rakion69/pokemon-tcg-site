@@ -1,4 +1,4 @@
-async function loadCards(cardIds, containerId) {
+async function loadCards(cards, containerId) {
     const container = document.getElementById(containerId);
 
     if (!container) {
@@ -6,8 +6,15 @@ async function loadCards(cardIds, containerId) {
         return;
     }
 
-    for (const cardId of cardIds) {
-        const card = await getCard(cardId);
+    for (const cardInfo of cards) {
+
+        const tcgdexId = getTcgdexId(cardInfo);
+
+        if (!tcgdexId) {
+            continue;
+        }
+
+        const card = await getCard(tcgdexId);
 
         if (!card) {
             continue;
@@ -16,8 +23,10 @@ async function loadCards(cardIds, containerId) {
         const cardElement = document.createElement("div");
         cardElement.className = "pokemon-card";
 
+        const imageUrl = card.getImageURL("high", "png");
+
         cardElement.innerHTML = `
-            <img src="${card.image}/high.webp" alt="${card.name}">
+            <img src="${imageUrl}" alt="${card.name}">
             <h3>${card.name}</h3>
         `;
 
