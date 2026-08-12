@@ -21,23 +21,38 @@ const setMap = {
     POR: "me03",
     CRI: "me04",
     PBL: "me05"
-    
 };
 
+// Ora puoi scrivere le tue staples usando I CODICI DEL SET UFFICIALI (es. "ASC-142")
 const staples = [
     "swsh3-136",
     "ASC-142",
     "ASC-196",
-    "me03-062",
-    "sv06-095",
-    "me01-119",
-    "me01-114",
-    "me01-131",
-    "me03-081",
-    "sv05-144",
-    "me01-125",
-    "sv09-056",
-    "sv10-176",
-    "svi-186"
-
+    "POR-062", 
+    "TWM-095", 
+    "MEG-119",
+    "MEG-114",
+    "MEG-131",
+    "POR-081",
+    "TEF-144",
+    "MEG-125",
+    "JTG-056",
+    "DRI-176",
+    "SVI-186"
 ];
+
+// Funzione che converte automaticamente i tuoi codici nel formato TCGdex
+function getTcgdexId(cardInput) {
+    if (!cardInput || typeof cardInput !== "string") return null;
+
+    const parts = cardInput.split("-");
+    if (parts.length !== 2) return cardInput.toLowerCase(); // Se è già un id valido
+
+    const rawSet = parts[0].toUpperCase();
+    const cardNumber = parts[1];
+
+    // Se il set è presente nella tua mappa usa la conversione, altrimenti lascia quello originale
+    const tcgdexSet = setMap[rawSet] || parts[0].toLowerCase();
+
+    return `${tcgdexSet}-${cardNumber}`;
+}
